@@ -1,14 +1,5 @@
-from collections import deque
+word = ['hello', 'word', 'python']
 
-st = 'abcd'
-dst = deque(st)
+sentence = '\\'.join(word)
 
-print(dst)
-
-dst.append(1)
-print(dst)
-
-dtt = deque()
-dtt.append(1)
-dtt.appendleft(3)
-print(dtt)
+print(sentence)
