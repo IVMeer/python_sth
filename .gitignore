@@ -10,3 +10,7 @@ htmlcov/
 venv
 env
 .idea
+
+data/
+digits/
+digits_processed/
