@@ -9,6 +9,9 @@ from torchvision.models.detection.rpn import AnchorGenerator
 
 from torchvision.transforms import v2 as T
 
+
+
+
 # load a model pre-trained on COCO
 model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights="DEFAULT")
 
