@@ -6,7 +6,11 @@
 # for i in range(n):
 #     print(i)
 
-nums = [4,1,2]
+# nums = [4,1,2]
 
-idx = {x: i for i,x in enumerate(nums)}
-print(idx)
+# idx = {x: i for i,x in enumerate(nums)}
+# print(idx)
+
+stack = [1,2,3,4,5]
+
+print(stack.pop())
