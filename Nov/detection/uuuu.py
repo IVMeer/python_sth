@@ -82,7 +82,7 @@ def get_transform(train):
 model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights="DEFAULT")
 # dataset = PennFudanDataset('.\\data\\PennFudanPed', get_transform(train=True))
 # dataset = PennFudanDataset('E:\\workspace\\python_demo\\Nov\\detection\\data\\PennFudanPed', get_transform(train=True))
-dataset = PennFudanDataset('.\\Nov\\detection\\data\\PennFudanPed', get_transform(train=True))
+dataset = PennFudanDataset('.\\Nov\\data\\PennFudanPed', get_transform(train=True))
 
 data_loader = torch.utils.data.DataLoader(
     dataset,

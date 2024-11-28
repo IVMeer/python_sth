@@ -1,3 +1,7 @@
+# 回溯 前置知识 二叉树 深度优先算法 递归；
+"""
+dfs通常使用递归实现，但也可以使用栈来实现。
+"""
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
