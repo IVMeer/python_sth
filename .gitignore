@@ -13,3 +13,6 @@ env
 
 data/
 
+chromedriver.exe
+chromedriver-win64.zip
+chromedriver-win64/
