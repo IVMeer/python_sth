@@ -1,5 +1,6 @@
-from flask import url_for
 from flask import Flask
+from flask import url_for
+from flask import request
 
 app = Flask(__name__)
 
@@ -7,8 +8,22 @@ app = Flask(__name__)
 def index():
     return 'index'
 
-@app.route('/login')
+@app.get('/login')
+def login_get():
+    return show_the_login_form()
+
+@app.post('/login')
+def login_post():
+    return do_the_login()
+
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        return do_the_login()
+    else:
+        return show_the_login_form()
+    
     return 'login'
 
 @app.route('/user/<username>')

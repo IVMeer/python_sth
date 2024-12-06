@@ -8,6 +8,7 @@ response = requests.get(url, headers=headers)
 page_text = response.text
 
 # 解析数据
+# soup = BeautifulSoup()
 soup = BeautifulSoup(page_text, 'lxml')
 
 # title_tags = soup.select('a.title')
@@ -28,6 +29,6 @@ for card in cards:
     title_text = title_tags.text if title_tags else None
     # 获取描述
     des_tags = card.select_one('.description')
-    des_text = des_tags.text if des_tags else None
+    # des_text = des_tags.text if des_tags else None
     print(f'标题：{title_text}，描述：{des_text}')
     print('\n')
