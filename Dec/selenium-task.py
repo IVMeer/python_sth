@@ -1,3 +1,9 @@
+"""
+爬取广州地区2017-2023生产总值的数据
+统计年鉴数据→地区生产总值：1.综合→1-14（地区生产总值）→
+"""
+
+
 import time
 from selenium import webdriver
 # from [selenium.webdriver.common.by](http://selenium.webdriver.common.by/) import By

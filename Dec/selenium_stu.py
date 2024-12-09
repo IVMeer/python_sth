@@ -15,20 +15,6 @@ from selenium.webdriver.common.by import By
 # driver.quit()
 
 driver = webdriver.Chrome()
-
-# try:
-#     driver.get("https://www.baidu.com")
-#     # Find the search box
-#     search_box = driver.find_element(By.ID, value="kw")
-#     # Enter the word to the search box
-#     search_box.send_keys("selenium")
-#     # Enter the "baiduyixia" button
-#     submit_button = driver.find_element(By.ID, value = "su")
-#     driver.implicitly_wait(0.5)
-# except:
-#     print('error')
-# finally:
-#     driver.quit()
     
 driver.get("https://www.baidu.com")
 # Find the search box

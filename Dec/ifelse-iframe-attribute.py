@@ -44,3 +44,5 @@ try:
 
 finally:
     driver.quit()
+
+iframe = driver.find_element(By.TAG_NAME, '')

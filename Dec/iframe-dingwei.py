@@ -4,6 +4,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 import time
+import pandas as pd
+
 
 # 初始化 WebDriver
 chromedriver_path = 'E:\\workspace\\python_demo\\Dec\\chromedriver.exe'
@@ -30,16 +32,89 @@ try:
     )
     print("目标元素找到:", element.text)
 
-    # 如果需要点击目标链接
+    # 点击目标链接
     element.click()
     
-    element2 = WebDriverWait(driver, 5).until(
+    element2 = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//a[@href="01/html/01-14.htm"]'))
     )
-    print("目标元素2找到：", element2.text)
+    print("目标元素2找到:", element2.text)
     element2.click()
     
-    time.sleep(5)
+    # 定位到表格头先
+    # 1.
+    # item_text = WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, "//td[@rowspan='6'][contains(text(), '项')]"))
+    # ).text
+    # print("表格头文本:", item_text)
+    # # time.sleep(5)
+    
+    
+    # 先定位到iframe
+    # WebDriverWait(driver, 3).until(
+    #     EC.presence_of_element_located((By.ID, "myframe"))
+    # )
+    # print('等待iframe加载完成')
+    
+    # # 在定位到 tbody
+    # WebDriverWait(driver, 30).until(
+    #     EC.presence_of_element_located((By.TAG_NAME, 'tbody'))
+    # )
+    # print('tbody 元素已加载完成')
+    
+    
+    # # 创建一个空的列表来存储数据
+    # table_data = []
+    # 通过更长的等待时间确保新 iframe 完全加载
+    # WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.ID, "myframe"))  # 根据新 iframe 的 ID 或其他定位方式
+    # )
+    # print("新的 iframe 已加载")
+
+    # # 定位到新的 iframe 并切换
+    # iframe2 = driver.find_element(By.ID, "myframe")  # 如果加载了新的 iframe, 需要重新获取
+    # driver.switch_to.frame(iframe2)
+    
+    # # 等待 iframe 内的表格元素加载（你可以选择要等待的具体元素）
+    # WebDriverWait(driver, 3).until(
+    #     EC.presence_of_element_located((By.TAG_NAME, 'tbody'))
+    # )
+    # print("表格数据已加载")
+    table_data = []
+    #首先找到tbody元素
+    # element3 = driver.find_element(By.TAG_NAME, 'tbody') 
+    element3 = WebDriverWait(driver, 30000).until(
+        EC.presence_of_element_located((By.TAG_NAME, 'tbody'))
+    )
+     
+    
+    
+    # 遍历tbody 中的所有tr
+    for tr in element3.find_elements(By.TAG_NAME, 'tr'):
+        row = []
+        # 遍历 tr 中的所有td
+        for td in tr.find_elements(By.TAG_NAME, 'td'):
+            # row.append(td.text.strip())
+            text = td.text.strip()
+            row.append(text if text else 'NA')
+        if row:
+            table_data.append(row)
+    
+    print("表格数据:", table_data)
+        
+    df = pd.DataFrame(table_data, columns=["项目", "Item", "2021", "2022", "2022年比增长(%)"])
+
+    
+    print(df)
+    
+    # 将数据保存为csv
+    # df.to_csv('output.csv', index=False, encoding='utf-8')
+    # df.to_csv('no-strip.csv', index=False, encoding='utf-8')
+    # 将数据保存为excel
+    # df.to_excel('output.xlsx', index=False)    
+    df.to_excel('wait30.xlsx', index=False)
+    # df.to_csv("wait30s.csv", index=False, encoding='utf-8')
+
 
 finally:
     # 退出浏览器
