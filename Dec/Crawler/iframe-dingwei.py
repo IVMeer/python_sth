@@ -20,12 +20,13 @@ try:
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "myframe"))
     )
-    print("iframe 加载完成")
+    print("iframe 加载完成" )
     
     # 定位 iframe 并切换到其中
     iframe = driver.find_element(By.ID, "myframe")
     driver.switch_to.frame(iframe)
     print("已切换到 iframe")
+    
     # 在 iframe 内查找目标元素
     element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//a[@href='directory/01.html']"))
@@ -39,6 +40,7 @@ try:
         EC.presence_of_element_located((By.XPATH, '//a[@href="01/html/01-14.htm"]'))
     )
     print("目标元素2已找到:", element2.text)
+    # 点击链接，进入地区生产总值页面
     element2.click()
    
     # 先定位到iframe

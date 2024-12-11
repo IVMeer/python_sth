@@ -17,7 +17,7 @@ import time
 import pandas as pd
 
 # 初始化 WebDriver
-chromedriver_path = 'E:\\workspace\\python_demo\\Dec\\chromedriver.exe'
+chromedriver_path = 'E:\\workspace\\python_demo\\Dec\\Crawler\\chromedriver.exe'
 service = Service(chromedriver_path)
 driver = webdriver.Chrome(service=service)
 # driver = webdriver.Chrome()
