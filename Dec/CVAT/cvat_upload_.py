@@ -8,11 +8,11 @@ client.login('evo', '123456')
 
 # 基础路径配置
 base_path = Path(r"\\192.168.30.17\video\anti-thief-oss")
-start_date_str = "20241115"  # 起始日期
+start_date_str = "20241117"  # 起始日期
 days_to_process = 2  # 需要处理的天数
 
 # 转换为日期对象
-start_date = datetime.strptime(start_date_str, "%Y%m%d")
+start_date = datetime.strptime(start_date_str, "%Y %m %d")
 
 # 处理日期范围
 for day_offset in range(days_to_process):
