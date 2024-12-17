@@ -1,9 +1,15 @@
+import pandas as pd
 """
-try: except:语句捕获异常
+从表3抽第三列数据进入表1
 """
 
-try:
-    num = int(input("输入数字:"))
-    print(f"你输入的数字是:{ num }")
-except:
-    print("你输入的不是数字")
+excel_1 = pd.read_excel(r'C:\Users\win11\Desktop\excel_1.xlsx')
+excel_2 = pd.read_excel(r'C:\Users\win11\Desktop\excel_2.xlsx')
+
+third_column = excel_2.iloc[:, 2]
+
+excel_1['New_Column'] = third_column
+
+excel_1.to_excel('update_excel_1.xlsx', index=False)
+
+print("操作完成，已将数据更新到 updated_excel1.xlsx")
