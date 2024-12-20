@@ -1,4 +1,10 @@
-import numpy as np
+"""
+ANN 全连接神经网络
+Artificial Neural Network
+"""
+
+
+import numpy as np # 矩阵运算
 
 # 1. 数据准备：XOR 数据集
 X = np.array([[0, 0],
@@ -94,13 +100,13 @@ for epoch in range(epochs):
     W1, b1, W2, b2 = update_parameters(W1, b1, W2, b2, dW1, db1, dW2, db2, learning_rate)
     
     # 每 1000 次迭代打印一次损失
-    if epoch % 1000 == 0:
-        print(f"Epoch {epoch}, Loss: {loss:.10f}")
+    if epoch % 100 == 0:
+        print(f"Epoch {epoch}, Loss: {loss}")
 
 # 9. 训练完成后，进行预测
 A1, A2 = forward_propagation(X)
 predictions = (A2 > 0.5).astype(int)  # 将输出大于 0.5 的值判定为 1，反之为 0
 
-print("\n训练完成后的预测结果：")
+print("\n训练完成后的预测结果: ")
 print(predictions)
 

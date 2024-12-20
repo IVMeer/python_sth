@@ -19,9 +19,9 @@ plt.title("Grayscale Image")
 _, binary_image = cv2.threshold(gray_image, 127, 255, cv2.THRESH_BINARY)
 
 # 显示图像
-# plt.imshow(binary_image, cmap='gray')
+plt.imshow(binary_image, cmap='gray')
 plt.title("Binary Image")
-# plt.show()
+plt.show()
 
 #
 # 使用 Sobel 算子进行边缘检测
@@ -67,3 +67,9 @@ plt.title('Sobel Edge Detection')
 
 plt.tight_layout()
 plt.show()
+
+
+
+"""
+KNN→SVM→决策树
+"""

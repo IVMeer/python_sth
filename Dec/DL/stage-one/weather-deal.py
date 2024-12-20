@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt # 数据可视化
 import re
 
 
-data = pd.read_csv(r'E:\workspace\python_demo\Dec\DL\weather.csv')
+data = pd.read_csv(r'E:\workspace\python_demo\Dec\DL\stage-one\weather.csv')
 data['Date'] = data['Date'].apply(lambda x: re.findall(r'\d{4}-\d{2}-\d{2}', x))
 # 数据清洗：处理缺失值（示例）
 data.fillna(data.mean(), inplace=True)

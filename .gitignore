@@ -10,7 +10,10 @@ htmlcov/
 venv
 env
 .idea
-
+# 忽略 所有csv以及xlsx文件
+*.csv
+*.xlsx
+*.xls
 data/
 
 chromedriver.exe
