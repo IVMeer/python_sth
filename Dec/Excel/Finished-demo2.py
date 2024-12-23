@@ -5,7 +5,7 @@
 import pandas as pd
 from datetime import datetime
 # 读取 CSV 文件并转换为 DataFrame
-df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\防盗损文件夹领取情况_12_20.csv')
+df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\文件夹领取情况_12_20.csv')
 
 
 # 获取当天的日期并转化为字符串
