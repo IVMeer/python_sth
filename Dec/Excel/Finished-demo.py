@@ -1,10 +1,14 @@
+"""
+输入日期, 筛选出当天的已完成的文件夹, 并将数据写入新的excel中
+"""
+
 import pandas as pd
 from datetime import datetime
 # 读取 CSV 文件并转换为 DataFrame
-df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\防盗损文件夹领取情况_12_20.csv')
+df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\文件夹领取情况.csv')
 
 # 输入日期
-date = '2024/12/20'
+date = '2024/12/21'
 # 获取当天的日期并转化为字符串
 # date_str = datetime.today().strftime('%Y/%m/%d')    # 输出格式为 '2024/12/20'
 # print(date_str)
@@ -38,6 +42,9 @@ print(filter_df)
 # 尝试将日期名称写入文件名中
 # file_name = f'fileted_data_{ date_str }.xlsx'
 # filter_df.to_excel(file_name, index = False)
+date_convert = date.replace('/', '-')
+file_name = f'{date_convert}-完成名单.csv'
 
-# 将结果保存到新的 Excel 文件中
-filter_df.to_csv("filtered_data_20.csv", index = False)
+# 将完成名单保存为csv格式
+filter_df.to_csv(file_name, index = False)
+
