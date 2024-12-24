@@ -1,3 +1,7 @@
+"""
+SVM 手写数字识别
+"""
+
 # 导入必要的库
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score

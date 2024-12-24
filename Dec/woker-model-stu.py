@@ -1,6 +1,6 @@
 """
 工作者模式
-
+并发设计模式
 """
 
 import multiprocessing

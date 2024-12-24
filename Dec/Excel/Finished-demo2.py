@@ -5,7 +5,7 @@
 import pandas as pd
 from datetime import datetime
 # 读取 CSV 文件并转换为 DataFrame
-df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\文件夹领取情况_12_20.csv')
+df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\12244.csv', sep='\t')
 
 
 # 获取当天的日期并转化为字符串
@@ -34,6 +34,6 @@ print(filter_df)
 # 将结果保存到新的 Excel 文件中
 # 尝试将日期名称写入文件名中
 today_date_atype = datetime.today().strftime('%Y_%m_%d')
-file_name = f'{today_date_atype}_完成名单.xlsx'
-filter_df.to_excel(file_name, index = False)
+file_name = f'{today_date_atype}_完成名单.csv'
+filter_df.to_csv(file_name, index = False)
 # filter_df.to_csv("filtered_data_20.csv", index = False)

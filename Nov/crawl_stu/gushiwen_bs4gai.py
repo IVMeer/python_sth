@@ -37,6 +37,6 @@ def scrape_poems():
                     continue
         else:
             print(f"无法访问页面: {url}, 状态码: {response.status_code}")
-
+        print("=" * 50)
 # 调用爬取函数
 scrape_poems()

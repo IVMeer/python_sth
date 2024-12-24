@@ -16,6 +16,7 @@ env
 *.xls
 data/
 
+*.pdf
 chromedriver.exe
 chromedriver-win64.zip
 chromedriver-win64/

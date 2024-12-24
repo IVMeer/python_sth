@@ -12,7 +12,7 @@ gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # 显示图像
 # plt.imshow(gray_image, cmap='gray')
-plt.title("Grayscale Image")
+# plt.title("Grayscale Image")
 # plt.show()
 
 # 使用固定阈值进行二值化

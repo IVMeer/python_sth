@@ -2,6 +2,7 @@ import pandas as pd # 数据处理
 import numpy as np  # 矩阵运算
 import matplotlib.pyplot as plt # 数据可视化
 
+import csv
 # numpy 基本操作
 ## 数组创建
 # 一维数组

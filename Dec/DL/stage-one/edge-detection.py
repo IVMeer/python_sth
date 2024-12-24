@@ -9,7 +9,7 @@ import os
 print(os.getcwd())
 # 读取图像
 # image = cv2.imread('E:\\workspace\\python_demo\\Dec\\DL\\image.jpg', cv2.IMREAD_GRAYSCALE)
-image = cv2.imread(r'E:\workspace\python_demo\Dec\DL\image.jpg', cv2.IMREAD_GRAYSCALE)
+image = cv2.imread(r'E:\workspace\python_demo\Dec\DL\stage-one\image.jpg', cv2.IMREAD_GRAYSCALE)
 
 
 # 使用高斯滤波去噪

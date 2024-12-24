@@ -7,15 +7,15 @@ headers = {
 
 # 爬取页面的函数
 def scrape_poems():
-    for page_num in range(1):  # 爬取前10页
+    for page_num in range(10):  # 爬取前10页
         url = f'https://www.gushiwen.cn/default_{page_num + 1}.aspx'
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            
+            print("爬取页面成功")
             # 定位每首古诗文的外层容器
             poems = soup.find_all('div', class_='left')
-
+            print(f"爬取第{page_num}页的内容中")
             for poem in poems:
                 try:
                     # 标题
