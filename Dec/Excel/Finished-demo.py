@@ -5,10 +5,10 @@
 import pandas as pd
 from datetime import datetime
 # 读取 CSV 文件并转换为 DataFrame
-df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\文件夹领取情况.csv')
+df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\1224-new.csv')
 
 # 输入日期
-date = '2024/12/21'
+date = '2024/12/24'
 # 获取当天的日期并转化为字符串
 # date_str = datetime.today().strftime('%Y/%m/%d')    # 输出格式为 '2024/12/20'
 # print(date_str)

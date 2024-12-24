@@ -5,7 +5,6 @@
 import pdfplumber
 import re
 import os
-import shutil
 # pdf路径
 path = r'E:\workspace\python_demo\Dec\Invoice\123.pdf'
 # 提取PDF文件所在路径
