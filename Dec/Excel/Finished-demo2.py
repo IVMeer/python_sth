@@ -5,7 +5,7 @@
 import pandas as pd
 from datetime import datetime
 # 读取 CSV 文件并转换为 DataFrame
-df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\12244.csv')
+df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\1225new.csv')
 
 
 # 获取当天的日期并转化为字符串
@@ -25,10 +25,12 @@ filter_df.drop(columns=[filter_df.columns[2], filter_df.columns[3], filter_df.co
 
 # 将合并结果插入到第二列
 filter_df.insert(1, '时间', filter_df.pop('合并结果'))
-
+# 删除列名为Unnamed的列
+filter_df.loc[:, ~filter_df.columns.str.contains('^Unnamed')]
 # 输出结果
 # print("清洗完数据:")
 print(filter_df)
+
 
 
 # 将结果保存到新的 Excel 文件中

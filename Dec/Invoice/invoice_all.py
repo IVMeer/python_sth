@@ -1,5 +1,5 @@
 """
-文件夹下的所有pdf文件的处理
+处理文件夹下的所有PDF文件
 """
 
 
@@ -10,7 +10,7 @@ import os
 import shutil
 import glob
 
-folder_path = r'E:\workspace\python_demo\Dec\通行费电子发票502.07+13.79'
+folder_path = r'E:\workspace\python_demo\Dec\Invoice-test'
 
 # 获取所有pdf的路径
 pdf_files = glob.glob(os.path.join(folder_path, '*.pdf'))  
@@ -40,9 +40,9 @@ for path in pdf_files:
         lines = text.split("\n")
         
         # 所要提取的数据
-        invoice_number = "" # 发票号码
-        amount = ""         # 金额
-        seller_name = ""    # 销售方名称
+        # invoice_number = "" # 发票号码
+        # amount = ""         # 金额
+        # seller_name = ""    # 销售方名称
         
         
         print("获取结果如下" + "↓"*50)
@@ -79,16 +79,16 @@ for path in pdf_files:
                 
     # print(f'{seller_name}_{invoice_number} {amount}元')
 
-    # 如果陈工提取到信息，复制并重命名
-    if invoice_number and amount and seller_name:
-        print('-'*50)
-        print("提取成功")
-        # 创建新的文件夹名
-        new_filename = f'{seller_name}_{invoice_number} {amount}元.pdf'
-        new_file_path = os.path.join(dir_path, new_filename)
+    # 如果成功提取到信息，复制并重命名
+    # if invoice_number and amount and seller_name:
+    #     print('--'*50)
+    #     print("提取成功")
+    #     # 创建新的文件夹名
+    #     new_filename = f'{seller_name}_{invoice_number} {amount}元.pdf'
+    #     new_file_path = os.path.join(dir_path, new_filename)
         
-        # 复制文件并重命名
-        shutil.copy2(path, new_file_path)
-        print(f"文件已重命名为: {new_filename}")
-    else:
-        print(f"未能提取到完整的发票消息，跳过文件:{path}")
+    #     # 复制文件并重命名
+    #     shutil.copy2(path, new_file_path)
+    #     print(f"文件已重命名为: {new_filename}")
+    # else:
+    #     print(f"未能提取到完整的发票消息，跳过文件:{path}")

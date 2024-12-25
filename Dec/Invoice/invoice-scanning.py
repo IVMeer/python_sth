@@ -6,8 +6,9 @@
 扫描PDF文件所有内容,将其每一行内容提取出来。
 """
 
-
+# 载入pdfplumber库 
 import pdfplumber
+# 设置PDF文件路径
 pdf_path = r'E:\workspace\python_demo\Dec\Invoice\123.pdf'
 
 # 打开 PDF 文件
