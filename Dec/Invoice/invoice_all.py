@@ -80,15 +80,15 @@ for path in pdf_files:
     # print(f'{seller_name}_{invoice_number} {amount}元')
 
     # 如果成功提取到信息，复制并重命名
-    # if invoice_number and amount and seller_name:
-    #     print('--'*50)
-    #     print("提取成功")
-    #     # 创建新的文件夹名
-    #     new_filename = f'{seller_name}_{invoice_number} {amount}元.pdf'
-    #     new_file_path = os.path.join(dir_path, new_filename)
+    if invoice_number and amount and seller_name:
+        print('--'*50)
+        print("提取成功")
+        # 创建新的文件夹名
+        new_filename = f'{seller_name}_{invoice_number} {amount}元.pdf'
+        new_file_path = os.path.join(dir_path, new_filename)
         
-    #     # 复制文件并重命名
-    #     shutil.copy2(path, new_file_path)
-    #     print(f"文件已重命名为: {new_filename}")
-    # else:
-    #     print(f"未能提取到完整的发票消息，跳过文件:{path}")
+        # 复制文件并重命名
+        shutil.copy2(path, new_file_path)
+        print(f"文件已重命名为: {new_filename}")
+    else:
+        print(f"未能提取到完整的发票消息，跳过文件:{path}")
