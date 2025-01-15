@@ -37,10 +37,6 @@ for file_name in os.listdir(input_dir):
             # 过滤条件：第一列有数据，且第五列为空
             filter_blank_num = df[df.iloc[:, 0].notna() & df.iloc[:, 4].isna()]
 
-            # 输出为空的行（这里只打印前5行，避免数据量过大）
-            # head_and_tail = pd.concat([filter_blank_num.head(5), filter_blank_num.tail(5)])
-            # print(f"文件: {file_name}")
-            # print(head_and_tail)  # 打印前五条和尾五条数据
 
             # 输出全部数据
             print(filter_blank_num)

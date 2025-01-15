@@ -5,11 +5,12 @@
 import pandas as pd
 from datetime import datetime
 # 读取 CSV 文件并转换为 DataFrame
-df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\0107-xiamen.csv')
+df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\0114-厦门.csv')
 
 # 输入日期→命名输出文件夹称
-date = '2025/1/4至2025/1/7(厦门)'
-date_range = ['2025/1/4','2025/1/5','2025/1/6','2025/1/7']
+# date = '2025/1/10至2025/1/11(唐山)'
+date = '0113厦门'
+date_range = ['2025/1/13']
 # 获取当天的日期并转化为字符串
 # date_str = datetime.today().strftime('%Y/%m/%d')    # 输出格式为 '2024/12/20'
 # print(date_str)

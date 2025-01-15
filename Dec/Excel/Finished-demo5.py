@@ -1,15 +1,17 @@
 
-
+"""
+输出到Output文件夹
+"""
 
 import pandas as pd
 import os
 
 # 设置文件夹路径
-input_dir = r'E:\workspace\python_demo\Dec\Excel'  # 你要处理的文件夹路径
+input_dir = r'E:\workspace\python_demo\Dec\Excel\Input'  # 你要处理的文件夹路径
 output_dir = r'E:\workspace\python_demo\Dec\Excel\Output'  # 输出结果保存的文件夹
 
 # 输入截止日期
-date = '0108'
+date = '0111'
 
 # 遍历输入文件夹中的所有 CSV 文件
 for file_name in os.listdir(input_dir):
@@ -24,15 +26,13 @@ for file_name in os.listdir(input_dir):
 
         # 生成输出文件名
         blank_name = f'截止{date}剩余未完成质检名单-{file_name_part}'
+        print(blank_name)
         output_file = os.path.join(output_dir, f'{blank_name}.csv')
-
+        print(output_file)
         # 过滤条件：第一列有数据，且第五列为空
         filter_blank_num = df[df.iloc[:, 0].notna() & df.iloc[:, 4].isna()]
 
-        # 输出为空的行（这里只打印前5行，避免数据量过大）
-        # head_and_tail = pd.concat([filter_blank_num.head(5), filter_blank_num.tail(5)])
-        # print(f"文件: {file_name}")
-        # print(head_and_tail)  # 打印前五条和尾五条数据
+
 
         # 输出全部数据
         print(filter_blank_num)
