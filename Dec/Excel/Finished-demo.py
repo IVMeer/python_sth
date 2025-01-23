@@ -7,13 +7,13 @@
 
 import pandas as pd
 from datetime import datetime
-file_name = r'E:\workspace\python_demo\Dec\Excel\0120-厦门.csv'
+file_name = r'E:\workspace\python_demo\Dec\Excel\0122-唐山.csv'
 
 # 读取 CSV 文件并转换为 DataFrame
 df = pd.read_csv(file_name)
 
 # 输入日期
-date = '2025/1/20'
+date = '2025/1/22'
 
 # 过滤条件第一列为date所需要的日期且第十列为已完成。
 # filter_df = df[(df.iloc[:, 0] == date) & (df.iloc[:, 9] == '已完成')]   # iloc[row, column]→iloc[:,0]代表所有行，以及第一列
