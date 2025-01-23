@@ -5,12 +5,12 @@
 import pandas as pd
 from datetime import datetime
 # 读取 CSV 文件并转换为 DataFrame
-df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\0120-test.csv')
+df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\0123-唐山.csv')
 
 # 输入日期→命名输出文件夹称
 # date = '2025/1/10至2025/1/11(唐山)'
-date = '2025/1/17至2025/1/18(厦门)'
-date_range = ['2025/1/17', '2025/1/18']
+date = '2025/1/22至2025/1/23(唐山)'
+date_range = ['2025/1/22', '2025/1/23']
 # 获取当天的日期并转化为字符串
 # date_str = datetime.today().strftime('%Y/%m/%d')    # 输出格式为 '2024/12/20'
 # print(date_str)
@@ -21,9 +21,10 @@ filter_df = df[(df.iloc[:, 0].isin(date_range)) & (df.iloc[:, 9] == '已完成')
 # print("已筛选完数据 ")
 # 处理摄像头编号（第四列）和文件夹编号（第五列），并合并
 filter_df['合并结果'] = (
-    filter_df.iloc[:, 2].astype(str) + '-' +  # 数据包日期（第三列）
-    filter_df.iloc[:, 3].astype(str).str.zfill(2) + '-' +  # 摄像头编号（第四列）
-    filter_df.iloc[:, 4].astype(str)  # 文件夹编号（第五列）
+    filter_df.iloc[:, 2].astype(int).astype(str) + '-' +  # 数据包日期（第三列）
+    filter_df.iloc[:, 3].astype(int).astype(str).str.zfill(2) + '-' +  # 摄像头编号（第四列）
+    # filter_df.iloc[:, 4].astype(str)  # 文件夹编号（第五列）
+    filter_df.iloc[:, 4].apply(lambda x: str(x) if isinstance(x, str) and '_' in x else str(int(x)))  # 文件夹编号（第五列），处理 1 和 1_1 等情况
 )
 
 # 删除原始的三列（数据包日期、摄像头编号、文件夹编号）

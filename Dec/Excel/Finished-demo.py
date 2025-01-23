@@ -7,13 +7,13 @@
 
 import pandas as pd
 from datetime import datetime
-file_name = r'E:\workspace\python_demo\Dec\Excel\0122-唐山.csv'
+file_name = r'E:\workspace\python_demo\Dec\Excel\0123-厦门.csv'
 
 # 读取 CSV 文件并转换为 DataFrame
 df = pd.read_csv(file_name)
 
 # 输入日期
-date = '2025/1/22'
+date = '2025/1/20'
 
 # 过滤条件第一列为date所需要的日期且第十列为已完成。
 # filter_df = df[(df.iloc[:, 0] == date) & (df.iloc[:, 9] == '已完成')]   # iloc[row, column]→iloc[:,0]代表所有行，以及第一列
@@ -24,7 +24,8 @@ filter_df = df[(df.iloc[:,0] == date) & (df.iloc[:,9] == '已完成')]
 filter_df['合并结果'] = (
     filter_df.iloc[:, 2].astype(int).astype(str) + '-' +  # 数据包日期（第三列）
     filter_df.iloc[:, 3].astype(int).astype(str).str.zfill(2) + '-' +  # 摄像头编号（第四列）
-    filter_df.iloc[:, 4].astype(str)  # 文件夹编号（第五列）
+    # filter_df.iloc[:, 4].astype(int).astype(str)  # 文件夹编号（第五列）
+    filter_df.iloc[:, 4].apply(lambda x: str(x) if isinstance(x, str) and '_' in x else str(int(x)))  # 文件夹编号（第五列），处理 1 和 1_1 等情况
 )
 
 # 删除原始的三列（数据包日期、摄像头编号、文件夹编号）
