@@ -14,13 +14,13 @@
 
 import pandas as pd
 from datetime import datetime
-file_name = r'E:\workspace\python_demo\Dec\Excel\0124-tangshan.csv'
+file_name = r'E:\workspace\python_demo\Dec\Excel\0210-xiamen.csv'
 
 # 读取 CSV 文件并转换为 DataFrame
 df = pd.read_csv(file_name)
 
 # 输入日期
-date = '2025/1/24'
+date = '2025/2/10'
 # 过滤条件第一列为date所需要的日期且第十列为已完成。
 
 # 第一种过滤方式
@@ -51,7 +51,7 @@ filter_df = df[(df['日期'] == date) & (df['完成情况'] == '已完成')]
 # 
 filter_df['合并结果'] = (
     filter_df['数据包日期'].astype(int).astype(str) + '-' +
-    filter_df[' 机器号'].astype(int).astype(str).str.zfill(2) + '-' +
+    filter_df['机器号'].astype(int).astype(str).str.zfill(2) + '-' +
     filter_df['文件夹号数'].apply(lambda x: str(x) if isinstance(x, str) and '_' in x else str(int(x)))
 )
 
