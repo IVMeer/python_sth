@@ -9,7 +9,7 @@ df = pd.read_csv(r'E:\workspace\python_demo\Dec\Excel\0123-厦门.csv')
 
 
 # 获取当天的日期并转化为字符串
-today_date = datetime.today().strftime('%Y/%m/%d')    # 输出格式为 '2024/12/20'
+today_date = datetime.today().strftime('%Y/%m/%d')    # 输出格式为:'2024/12/20' '2025/01/23'
 # 去掉月份前的0
 today_date = today_date.replace(f"/0{datetime.today().month}/", f"/{datetime.today().month}/")
 print("当天时间: ",today_date)

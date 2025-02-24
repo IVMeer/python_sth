@@ -11,7 +11,7 @@ input_dir = r'E:\workspace\python_demo\Dec\Excel\Input'  # 你要处理的文件
 output_dir = r'E:\workspace\python_demo\Dec\Excel\Output'  # 输出结果保存的文件夹
 
 # 输入截止日期
-date = '0111'
+date = '0124'
 
 # 遍历输入文件夹中的所有 CSV 文件
 for file_name in os.listdir(input_dir):
