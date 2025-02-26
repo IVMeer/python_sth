@@ -5,9 +5,12 @@ import pandas as pd
 current_path = Path.cwd()
 print(f"当前路径: {current_path}")
 
+# 输入日期（你可以修改为动态输入）
+date = '2025/2/25'
+
 # 目标文件路径
-folder_path = current_path
-file_name = folder_path / '0224-优惠多.csv'
+folder_path = current_path / 'DealFile'
+file_name = folder_path / '0225-JXX.csv' 
 
 # 检查文件是否存在
 if not file_name.exists():
@@ -17,16 +20,15 @@ if not file_name.exists():
 # 读取 CSV 文件并转换为 DataFrame
 df = pd.read_csv(file_name)
 
-# 输入日期（你可以修改为动态输入）
-date = '2025/2/24'
+
 
 # 过滤 DataFrame
 filter_df = df[(df['日期'] == date) & (df['完成情况'] == '已完成')]
 
 # 合并结果列
 filter_df['合并结果'] = (
-    filter_df['数据包日期'].astype(str) + '-' +
-    filter_df['机器号'].astype(str).str.zfill(2) + '-' +
+    filter_df['数据包日期'].astype(int).astype(str) + '-' +
+    filter_df['机器号'].astype(int).astype(str).str.zfill(2) + '-' +
     filter_df['文件夹号数'].apply(lambda x: str(x) if isinstance(x, str) and '_' in x else str(int(x)))
 )
 
