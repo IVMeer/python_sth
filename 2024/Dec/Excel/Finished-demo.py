@@ -5,13 +5,13 @@
 """
 
 import pandas as pd
-file_name = r'E:\workspace\python_demo\2024\Dec\Excel\0223-优惠多.csv'
+file_name = r'E:\workspace\python_demo\2024\Dec\Excel\0303-金小象.csv'
 
 # 读取 CSV 文件并转换为 DataFrame
 df = pd.read_csv(file_name)
 
 # 输入日期
-date = '2025/2/21'
+date = '2025/3/3'
 
 filter_df = df[(df['日期'] == date) & (df['完成情况'] == '已完成')]
 

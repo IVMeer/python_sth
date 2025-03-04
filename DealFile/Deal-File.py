@@ -6,11 +6,11 @@ current_path = Path.cwd()
 print(f"当前路径: {current_path}")
 
 # 输入日期（你可以修改为动态输入）
-date = '2025/2/25'
+date = '2025/3/3'
 
 # 目标文件路径
 folder_path = current_path / 'DealFile'
-file_name = folder_path / '0225-JXX.csv' 
+file_name = folder_path / '0303-金小象.csv' 
 
 # 检查文件是否存在
 if not file_name.exists():
@@ -40,6 +40,9 @@ filter_df.insert(1, '时间', filter_df.pop('合并结果'))
 
 # 输出结果
 print(filter_df)
+# 显示筛选后的数据行数和列数
+print(f"筛选后的数据共有 {filter_df.shape[0]} 行")
+
 
 # 转换日期格式
 date_convert = date.replace('/', '-')
