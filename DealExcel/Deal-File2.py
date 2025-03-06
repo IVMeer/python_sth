@@ -61,8 +61,8 @@ def process_files(folder_path: Path, file_names: list, date: str):
             print(f"处理文件 {file_path.name} 时出错: {e}")
 
 # 示例：输入文件夹路径和文件名列表
-folder_path = Path.cwd() / 'DealFile'
-file_names = ['0305-唐山.csv', '0305-优惠多.csv',]  # 需要处理的文件名
+folder_path = Path.cwd() / 'DealExcel'
+file_names = ['0305-唐山.csv', '0306-优惠多.csv',]  # 需要处理的文件名
 
-date = '2025/3/5'  # 可以修改为动态输入
+date = '2025/3/6'  # 可以修改为动态输入
 process_files(folder_path, file_names, date)

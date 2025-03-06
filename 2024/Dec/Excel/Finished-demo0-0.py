@@ -1,6 +1,5 @@
 from pathlib import Path
 import pandas as pd
-import os
 
 # 获取当前工作目录
 current_path = Path.cwd()
