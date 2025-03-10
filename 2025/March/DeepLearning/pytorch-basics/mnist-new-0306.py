@@ -10,7 +10,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # 数据预处理
 transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.1307,), (0.3081,))
+    transforms.Normalize((0.1307,), (0.3081,))  # 归一化？
 ])
 # 加载数据集
 train_dataset = torchvision.datasets.MNIST(root='./data',train = True, transform=transform, download=True)
@@ -37,6 +37,7 @@ class CNN(nn.Module):
     def forward(self, x):
         x = self.relu(self.conv1(x))
         x = self.pool(self.relu(self.conv2(x)))
+        x = self.pool(x)
         x = x.view(x.size(0), -1)   # 展平
         x = self.relu(self.fc1(x))
         x = self.dropout(x)
@@ -79,3 +80,8 @@ with torch.no_grad():
         correct += (predicted == labels).sum().item()
         
 print(f"Test Accuracy: {100 * correct / total:.2f}%")
+
+
+torch.save(model.state_dict(), 'mnist_cnn.pth')
+
+torch.save(model.state_dict(), 'mnist_cnn_weights.pth')
