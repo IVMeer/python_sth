@@ -62,7 +62,7 @@ def process_files(folder_path: Path, file_names: list, date: str):
 
 # 示例：输入文件夹路径和文件名列表
 folder_path = Path.cwd() / 'DealExcel'
-file_names = ['0310-唐山.csv', '0310-优惠多.csv','0310-金小象']  # 需要处理的文件名
+file_names = ['0311-唐山.csv', '0312-优惠多.csv','0311-金小象']  # 需要处理的文件名
 
-date = '2025/3/10'  # 可以修改为动态输入
+date = '2025/3/12'  # 可以修改为动态输入
 process_files(folder_path, file_names, date)
