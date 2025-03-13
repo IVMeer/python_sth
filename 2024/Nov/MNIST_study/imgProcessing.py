@@ -1,6 +1,4 @@
 import cv2 as cv
-# for i in range():
-#     pass
 for i in range(10):
 
     src = cv.imread('E:\\workspace\\python_demo\\MINST_study\\digits\\'+str(i)+'.jpg')#读取图片
