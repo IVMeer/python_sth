@@ -18,6 +18,7 @@ testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True
 trainloader = DataLoader(trainset, batch_size=64, shuffle=True)
 testloader = DataLoader(testset, batch_size=64, shuffle=False)
 
+# mat1 and mat2 shapes cannot be multiplied (64x4096 and 16384x128)
 # 定义 CNN 结构
 class CNN(nn.Module):
     def __init__(self):
