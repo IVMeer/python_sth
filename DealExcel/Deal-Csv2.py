@@ -1,7 +1,6 @@
 from pathlib import Path
 import pandas as pd
 
-
 def process_files(folder_path: Path, file_names: list, date: str):
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
@@ -62,8 +61,10 @@ def process_files(folder_path: Path, file_names: list, date: str):
 
 # 示例：输入文件夹路径和文件名列表
 folder_path = Path.cwd() / 'DealExcel'
-file_names_total = ['0311-唐山.csv', '0320-优惠多.csv','0311-金小象.cvs','0318-涿州.csv']  # 需要处理的文件名
-
-file_names_now = ['0320-优惠多.csv','0320-涿州.csv']    # 现在所需要处理的文件
-date = '2025/3/20'  # 可以修改为动态输入
+file_names_now = ['0326-优惠多.csv','0326-涿州.csv']    # 现在所需要处理的文件
+# 输入当天日期
+# date = "2025/3/25"
+# file_suffixes = ['优惠多', '涿州']
+# file_names_now = [f'{date.replace("/","")}-{suffix}.csv' for suffix in file_suffixes]
+date = '2025/3/26'  # 可以修改为动态输入
 process_files(folder_path, file_names_now, date)
