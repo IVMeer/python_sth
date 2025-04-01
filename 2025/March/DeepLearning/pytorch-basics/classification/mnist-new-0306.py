@@ -10,7 +10,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # 数据预处理
 transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.1307,), (0.3081,))  # 归一化？
+    transforms.Normalize((0.1307,), (0.3081,))  # 归一化
 ])
 # 加载数据集
 train_dataset = torchvision.datasets.MNIST(root='./data',train = True, transform=transform, download=True)
@@ -83,5 +83,7 @@ print(f"Test Accuracy: {100 * correct / total:.2f}%")
 
 
 torch.save(model.state_dict(), 'mnist_cnn.pth')
+print("Save PyTorch Model State to mnist_cnn.pth")
 
 torch.save(model.state_dict(), 'mnist_cnn_weights.pth')
+print("Save PyTorch Model Weight to mnist_cnn_weights.pth")
