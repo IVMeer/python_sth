@@ -61,10 +61,10 @@ def process_files(folder_path: Path, file_names: list, date: str):
 
 # 示例：输入文件夹路径和文件名列表
 folder_path = Path.cwd() / 'DealExcel'
-file_names_now = ['0401-优惠多.csv','0401-涿州.csv']    # 现在所需要处理的文件
+file_names_now = ['0403-优惠多.csv','0403-涿州.csv']    # 现在所需要处理的文件
 # 输入当天日期
 # date = "2025/3/25"
 # file_suffixes = ['优惠多', '涿州']
 # file_names_now = [f'{date.replace("/","")}-{suffix}.csv' for suffix in file_suffixes]
-date = '2025/4/1'  # 可以修改为动态输入
+date = '2025/4/3'  # 可以修改为动态输入
 process_files(folder_path, file_names_now, date)
